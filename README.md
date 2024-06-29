@@ -5,4 +5,4 @@
 * naver_login.md : https://github.com/paintover/js-homework/blob/main/mission01/naver_login/naver_login.md
 
 ## 세 번째 과제 (엘리멘탈 포스터)
-* poster_md : 
+* poster_md : https://github.com/paintover/js-homework/blob/main/mission02/poster/poster.md
