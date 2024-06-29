@@ -11,20 +11,19 @@
 
 const nav = document.querySelector('.nav')
 const visualImage = document.querySelector('.visual img')
-const liList = document.querySelector('ul').children
+const liList = Array.from(document.querySelector('ul').children)
 const nickName = document.querySelector('.nickName')
+
 
 // 배경색 변경 (colorB의 기본값은 #000)
 function setBgColor (node, colorA, colorB = '#000'){
   if(typeof node === 'string') node = document.querySelector(node)
 
-  if(typeof colorA === 'string') colorA = colorA
-  if(typeof colorB === 'string') colorB = colorB
-
   node.style.background = `linear-gradient(to bottom, ${colorA},${colorB})`;
 }
 
-// // 이미지 변경
+
+ // 이미지 변경
 function setImage (node, data, index){
   if(typeof node === 'string') node = document.querySelector(node)
   
@@ -62,12 +61,14 @@ function handleClick(e) {
   setImage(visualImage, data, index)
   setNameText(nickName, data, index)
 
-  for(const list of liList) {
-    list.classList.remove('is-active')
-  }
+  // for(const list of liList) {
+  //   list.classList.remove('is-active')
+  // }
 
+  liList.forEach(li => li.classList.remove('is-active'))
   li.classList.add('is-active')
 }
+
 
 // 클릭 이벤트 활성화
 nav.addEventListener('click', handleClick)
